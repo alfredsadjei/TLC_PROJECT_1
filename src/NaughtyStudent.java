@@ -2,6 +2,11 @@ import java.util.List;
 
 public class NaughtyStudent extends Student {
 
+
+    public NaughtyStudent(String name, List<Double> grades) {
+        super(name, grades);
+    }
+
     public NaughtyStudent(List<Double> grades) {
         super(grades);
     }
