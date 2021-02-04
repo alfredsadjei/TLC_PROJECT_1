@@ -1,8 +1,8 @@
 import java.util.List;
 
-public abstract class Student {
-    private List<Double> grades;
-    private double averageGrade;
+public class Student {
+    protected List<Double> grades;
+    protected double averageGrade;
 
     public Student(List<Double> grades) {
         this.grades = grades;

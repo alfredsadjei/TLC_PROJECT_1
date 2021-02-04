@@ -5,4 +5,18 @@ public class NaughtyStudent extends Student {
     public NaughtyStudent(List<Double> grades) {
         super(grades);
     }
+
+    @Override
+    public double getAverageGrade(List<Double> grades) {
+        double averageGrade;
+        double sum =  0.0 ;
+
+        for (Double grade : grades) {
+            sum += grade;
+        }
+
+        averageGrade = sum/grades.size();
+
+        return averageGrade + (0.1 * averageGrade);
+    }
 }
