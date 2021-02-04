@@ -6,7 +6,15 @@ import java.util.List;
 public class NaughtyStudentTest {
     @Test
     public void testNaughtyStudentIsStudent(){
+        List<Double> testList = new ArrayList<>();
+        testList.add(85.0);
+        testList.add(70.0);
+        testList.add(65.0);
 
+        NaughtyStudent naughtyStudent = new NaughtyStudent(testList);
+
+        // always true - produces warning in intellij
+        Assert.assertTrue(naughtyStudent instanceof Student);
     }
 
     @Test
