@@ -5,7 +5,12 @@ import java.util.List;
 
 public class NaughtyStudentTest {
     @Test
-    public void testNaughtyStudent() {
+    public void testNaughtyStudentIsStudent(){
+
+    }
+
+    @Test
+    public void testNaughtyStudentHigherGrade() {
         List<Double> testList = new ArrayList<>();
         testList.add(85.0);
         testList.add(70.0);
