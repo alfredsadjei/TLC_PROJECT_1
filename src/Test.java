@@ -5,11 +5,21 @@ public class Test {
 
     public static void main(String[] args){
 
-        List<Nameable> tlc3 = new ArrayList<>();
+        List<Student> tlc3 = new ArrayList<>();
 
 
 
-        tlc3.add(new Student("Bob",Level.PRIMARY));
+//        Student bob = new Student("Bob", Level.PRIMARY);
+//        Student bob1 = bob;
+//        BagOfStudents newBag = new BagOfStudents(5);
+//
+//        newBag.add(bob);
+//        newBag.add(bob1);
+//        newBag.remove(bob1);
+//        System.out.println(newBag);
+
+
+
         tlc3.add(new Student("Bob1",Level.SECONDARY));
         tlc3.add(new Student("Bob2",Level.SECONDARY));
         tlc3.add(new Student("Bob3"));
