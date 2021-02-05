@@ -1,14 +1,26 @@
 import java.util.List;
 
-public class Student implements Nameable {
+public class Student implements Nameable,HasLevel {
     private String name;
-    protected List<Double> grades;
+    private Level studentLevel;
+    private List<Double> grades;
     protected double averageGrade;
+
+    public Student(String name) {
+        this.name = name;
+    }
 
     public Student(String name, List<Double> grades) {
         this.name = name;
         this.grades = grades;
         this.averageGrade = getAverageGrade(this.grades);
+    }
+
+    public Student(String name, Level studentLevel, List<Double> grades, double averageGrade) {
+        this.name = name;
+        this.studentLevel = studentLevel;
+        this.grades = grades;
+        this.averageGrade = averageGrade;
     }
 
     public Student(List<Double> grades) {
@@ -53,7 +65,9 @@ public class Student implements Nameable {
     @Override
     public String toString() {
         return "Student{" +
-                "grades=" + grades +
+                "name='" + name + '\'' +
+                ", studentLevel=" + studentLevel +
+                ", grades=" + grades +
                 ", averageGrade=" + averageGrade +
                 '}';
     }
@@ -61,5 +75,10 @@ public class Student implements Nameable {
     @Override
     public String getName() {
         return this.name;
+    }
+
+    @Override
+    public Level getLevel() {
+        return studentLevel;
     }
 }

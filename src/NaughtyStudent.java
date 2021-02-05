@@ -3,6 +3,10 @@ import java.util.List;
 public class NaughtyStudent extends Student {
 
 
+    public NaughtyStudent(String name) {
+        super(name);
+    }
+
     public NaughtyStudent(String name, List<Double> grades) {
         super(name, grades);
     }

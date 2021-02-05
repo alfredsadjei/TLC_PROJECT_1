@@ -28,4 +28,10 @@ public class Lecture {
         return averageGradeList.get(averageGradeList.size()-1);
     }
 
+    @Override
+    public String toString() {
+        return "Lecture{" +
+                "studentList=" + studentList +
+                '}';
+    }
 }
