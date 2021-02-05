@@ -1,14 +1,17 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Register {
-    private List<Nameable> studentRegister;
+    private List<Student> studentRegister;
 
-    public Register(List<Nameable> studentRegister) {
+//    public Register(List<Nameable> studentRegister) {
+//        this.studentRegister = studentRegister;
+//    }
+
+    public Register(List<Student> studentRegister) {
         this.studentRegister = studentRegister;
     }
 
-    public void setStudentRegister(List<Nameable> studentRegister) {
+    public void setStudentRegister(List<Student> studentRegister) {
         this.studentRegister = studentRegister;
     }
 
@@ -22,15 +25,22 @@ public class Register {
         return studentNames;
     }
 
-    public List<String> getRegisterByLevel(Level level){
-        List<String> studentsAtLevel = new ArrayList<>();
+    public List<Student> sort(CompareStudents comparison){
+        Collections.sort(studentRegister, comparison);
+        return studentRegister;
+    }
 
-        for(Nameable student : studentRegister){
+    public Map<Level, List<Student>> getRegisterByLevel(Level level){
+        Map<Level, List<Student>> studentsAtLevel = new HashMap<>();
+        ArrayList<Student> students = new ArrayList<>();
+
+        for(Student student : studentRegister){
             if(student.getLevel() == level){
-                studentsAtLevel.add(student.getName());
+                students.add(student);
             }
         }
 
+        studentsAtLevel.put(level, students);
 
         return studentsAtLevel;
     }
@@ -43,13 +53,13 @@ public class Register {
         }
 
         for (Level level: levelList){
-            List<String> studentsAtLevel = new ArrayList<>();
+            Map<Level, List<Student>> studentsAtLevel = new HashMap<>();
 
             studentsAtLevel = getRegisterByLevel(level);
 
-            System.out.println("Level: "+level);
-            System.out.println("\n");
-            System.out.println(studentsAtLevel+"\n");
+            System.out.println("Level: "+ level + studentsAtLevel.get(level));
+//            System.out.println("\n");
+//            System.out.println(studentsAtLevel+"\n");
 
         }
 
