@@ -21,4 +21,9 @@ public class RegisterTest {
         //Assert.assertArrayEquals(expected, nameList);
         Assert.assertEquals(expected, nameList);
     }
+
+    @Test
+    public void testGetStudentByName(){
+
+    }
 }
