@@ -12,10 +12,10 @@ public class Register {
         this.studentRegister = studentRegister;
     }
 
-    public List<String> getRegister(List<Nameable> stuRegister){
+    public List<String> getRegister(){
         List<String> studentNames = new ArrayList<>();
 
-        for (Nameable student : stuRegister){
+        for (Nameable student : studentRegister){
             studentNames.add(student.getName());
         }
 
