@@ -15,10 +15,10 @@ public class Lecture {
     }
 
 
-    public double getHighestAverageGrade(List<Student> stuList){
+    public double getHighestAverageGrade(){
         List<Double> averageGradeList = new ArrayList<>();
 
-        for(Student student : stuList){
+        for(Student student : studentList){
             averageGradeList.add(student.getAverageGrade());
         }
 
