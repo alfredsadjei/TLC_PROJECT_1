@@ -8,6 +8,7 @@ public class LectureTest {
     public void testGetHighestAverageGrade(){
 
     }
+
     @Test
     public void testNaughtyStudentInLecture(){
         List<Student> studentList = new ArrayList<>();
@@ -23,9 +24,9 @@ public class LectureTest {
         studentList.add(new NaughtyStudent("Joe", gradeList));
 
         Lecture TLC = new Lecture(studentList);
-//        double highestAverageGrade = TLC.getHighestAverageGrade();
-//        two options -> compare expected w what we get vs.
-//        take naughty student & student avg grade, assert that highest avg grade equals naughty student & not regular student
+        double highestAverageGrade = TLC.getHighestAverageGrade();
+//      two options -> compare expected w what we get vs.
+//      take naughty student & student avg grade, assert that highest avg grade equals naughty student & not regular student
     }
 
 }

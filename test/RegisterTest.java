@@ -7,7 +7,7 @@ import java.util.List;
 public class RegisterTest {
     @Test
     public void testGetRegister(){
-        List<Nameable> tlc3 = new ArrayList<>();
+        List<Student> tlc3 = new ArrayList<>();
         List<String> expected = Arrays.asList("Bob", "Bob1", "Bob2", "Bob3");
 
         tlc3.add(new Student("Bob"));
