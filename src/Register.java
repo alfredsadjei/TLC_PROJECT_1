@@ -64,6 +64,18 @@ public class Register {
         }
 
     }
+
+    public Student getStudentByName(String name)
+    throws StudentNotFoundException
+    {
+        for(Student student : studentRegister){
+            String studentName = student.getName();
+            if (studentName.equals(name)){
+                return student;
+            }
+        }
+        throw new StudentNotFoundException("This student cannot be found");
+    }
 }
 
 
