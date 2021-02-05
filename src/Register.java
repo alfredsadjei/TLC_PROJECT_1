@@ -21,4 +21,39 @@ public class Register {
 
         return studentNames;
     }
+
+    public List<String> getRegisterByLevel(Level level){
+        List<String> studentsAtLevel = new ArrayList<>();
+
+        for(Nameable student : studentRegister){
+            if(student.getLevel() == level){
+                studentsAtLevel.add(student.getName());
+            }
+        }
+
+
+        return studentsAtLevel;
+    }
+
+    public void printReport(){
+        List<Level> levelList = new ArrayList<>();
+
+        for(Level studentLevel : Level.values()){
+            levelList.add(studentLevel);
+        }
+
+        for (Level level: levelList){
+            List<String> studentsAtLevel = new ArrayList<>();
+
+            studentsAtLevel = getRegisterByLevel(level);
+
+            System.out.println("Level: "+level);
+            System.out.println("\n");
+            System.out.println(studentsAtLevel+"\n");
+
+        }
+
+    }
 }
+
+

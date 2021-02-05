@@ -5,22 +5,24 @@ public class Test {
 
     public static void main(String[] args){
 
-        List<Student> tlc3 = new ArrayList<>();
+        List<Nameable> tlc3 = new ArrayList<>();
 
-        tlc3.add(new Student("Bob"));
-        tlc3.add(new Student("Bob1"));
-        tlc3.add(new Student("Bob2"));
+
+
+        tlc3.add(new Student("Bob",Level.PRIMARY));
+        tlc3.add(new Student("Bob1",Level.SECONDARY));
+        tlc3.add(new Student("Bob2",Level.SECONDARY));
         tlc3.add(new Student("Bob3"));
 
-        tlc3.add(new NaughtyStudent("Jen"));
-        tlc3.add(new NaughtyStudent("Jen2"));
-        tlc3.add(new NaughtyStudent("Jen3"));
+        tlc3.add(new NaughtyStudent("Jen",Level.TERTIARY));
+        tlc3.add(new NaughtyStudent("Jen2",Level.TERTIARY));
+        tlc3.add(new NaughtyStudent("Jen3",Level.SECONDARY));
 
 
-        Lecture TLC = new Lecture(tlc3);
+        //Lecture TLC = new Lecture(tlc3);
+        Register newReg = new Register(tlc3);
 
-        System.out.println("\n");
-        System.out.println(TLC.toString());
+        newReg.printReport();
     }
 }
 

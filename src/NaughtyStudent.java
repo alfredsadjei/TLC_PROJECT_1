@@ -7,6 +7,10 @@ public class NaughtyStudent extends Student {
         super(name);
     }
 
+    public NaughtyStudent(String name, Level studentLevel) {
+        super(name, studentLevel);
+    }
+
     public NaughtyStudent(String name, List<Double> grades) {
         super(name, grades);
     }

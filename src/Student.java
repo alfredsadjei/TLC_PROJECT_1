@@ -10,6 +10,11 @@ public class Student implements Nameable,HasLevel {
         this.name = name;
     }
 
+    public Student(String name, Level studentLevel) {
+        this.name = name;
+        this.studentLevel = studentLevel;
+    }
+
     public Student(String name, List<Double> grades) {
         this.name = name;
         this.grades = grades;
