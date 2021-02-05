@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class Student implements Nameable,HasLevel {
+public class Student implements Nameable, HasLevel{
     private String name;
     private Level studentLevel;
     private List<Double> grades;
