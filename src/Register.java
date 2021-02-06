@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class Register {
     private List<Nameable> studentRegister;
@@ -24,6 +26,7 @@ public class Register {
 
     public List<String> getRegisterByLevel(Level level){
         List<String> studentsAtLevel = new ArrayList<>();
+
 
         for(Nameable student : studentRegister){
             if(student.getLevel() == level){
