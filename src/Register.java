@@ -1,5 +1,9 @@
 
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.DoubleStream;
+
+import static java.util.Comparator.comparing;
 
 
 public class Register {
@@ -27,9 +31,16 @@ public class Register {
         return studentNames;
     }
 
-    public List<Student> sort(CompareStudents comparison){
-        Collections.sort(studentRegister, comparison);
-        return studentRegister;
+    public List<Student> sort(){
+        //Refactoring the sort method to use streams
+
+        //get list and create stream
+        List <Student> sortedStudentList = this.studentRegister.stream()
+                .sorted(comparing(Student::getName)) //call the sorted and comparing methods
+                .collect(Collectors.toList()); //call the collect method to convert stream into list
+
+        //return sorted list
+        return sortedStudentList;
     }
 
     public Map<Level, List<Student>> getRegisterByLevel(Level level){
@@ -49,6 +60,8 @@ public class Register {
         return studentsAtLevel;
     }
 
+
+
     public void printReport(){
         List<Level> levelList = new ArrayList<>();
 
@@ -67,6 +80,45 @@ public class Register {
 
         }
 
+    }
+
+    public Double getHighestStudentGrade(){
+        List<Double> highestGrades = new ArrayList<>();
+
+        studentRegister.forEach(student -> highestGrades.add(student.getGrades().stream().max(Double::compareTo).get()));
+
+        highestGrades.sort(Double::compareTo);
+
+        return highestGrades.get(highestGrades.size()-1);
+    }
+
+    public double getOverallAverageGrade(){
+        double overallSum = 0.0;
+        double sampleSize = 0.0;
+
+
+        for (Student student : studentRegister) {
+            overallSum += student.getGrades().stream().reduce(0.0, (a,b)->a+b);
+            sampleSize += student.getGrades().size(); // get number of grades and add to total number of grades
+        }
+
+        return overallSum/sampleSize;
+
+    }
+
+    public DoubleStream getGradesAboveThreshold(){
+        
+       DoubleStream gradeList = null;
+
+        for (Student student : studentRegister) {
+            if (student.getAverageGrade() > 0.6){
+               gradeList =  student.getGrades().stream().mapToDouble(Double::doubleValue);
+
+            }
+
+        }
+
+        return gradeList;
     }
 }
 
